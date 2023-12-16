@@ -2,7 +2,7 @@ spring:
   datasource:
     url : jdbc:mysql://localhost:3306/InvoiceAuth
     username: root
-    password: Rashen1234
+    password: Cwewwe_123
   jpa:
     hibernate:
       ddl-auto: update
