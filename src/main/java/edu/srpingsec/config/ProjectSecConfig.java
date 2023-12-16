@@ -18,7 +18,10 @@ public class ProjectSecConfig {
         //TODO : Should implement CSRF configurations and CROS
         http.csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/user/log").authenticated() //authenticating this path
+                        .requestMatchers("/user/log/both").hasAnyRole("USER","ADMIN")
+                        //.requestMatchers("/user/log").hasRole("USER")
+                        .requestMatchers("/user/log/admin").hasRole("ADMIN")
+                       .requestMatchers("/user/log").authenticated() //authenticating this path
                         .requestMatchers("/user/register").permitAll()) //allowing access to this without authenticating
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());

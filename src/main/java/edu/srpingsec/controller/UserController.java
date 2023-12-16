@@ -28,6 +28,19 @@ public class UserController {
         return "Login Success!";
     }
 
+    @GetMapping("/log/user")
+    public String loginUserMethod(){
+        return "ROLE_USER Login Success!";
+    }
+    @GetMapping("/log/admin")
+    public String loginAdminMethod(){
+        return "ROLE_ADMIN Login Success!";
+    }
+    @GetMapping("/log/both")
+    public String loginBothMethod(){
+        return "ROLE_BothLogin Success!";
+    }
+
     @GetMapping("/register")
     public String singUpMethod(){
         return "Registration Success!";
